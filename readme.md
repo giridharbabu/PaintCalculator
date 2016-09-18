@@ -6,7 +6,7 @@ PaintCalculatorRunner.java is the main class. It calls TestPaintCalculator.java 
 
 3. assumption is 400 sq ft can be painted with a gallon./n
 
-steps to run./n
+steps to run.
 
 javac PaintCalculatorRunner.java
 

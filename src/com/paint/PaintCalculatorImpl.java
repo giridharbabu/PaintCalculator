@@ -4,21 +4,20 @@ import java.util.ArrayList;
 
 public class PaintCalculatorImpl implements PaintCalculator {
 
-	public final double AREA_PER_GALLON = 400.00;
+	public final double AREA_PER_GALLON = 20; //20 sqft
 
 	@Override
 	public double getPaintGallons(RoomDetails roomDetails) {
 		int room = getAreaToPaint(roomDetails.getWallHeight(), roomDetails.getWallWidth(), roomDetails.getWallLength());
 
 		room = room - getNonPaintArea(roomDetails.getNonPaintArea());
-		room = room * 12;
 		double gallons = (double) (room / AREA_PER_GALLON);
 		return gallons;
 	}
 
 	public int getAreaToPaint(int height, int width, int length) {
 		int walls = 2 * (length * height) + 2 * (width * height);
-		int ceiling = 1 * width;
+		int ceiling = 1 * width * length;
 		int room = walls + ceiling;
 		return room;
 	}
